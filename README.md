@@ -1,2 +1,3 @@
 # vue+nodejs+vuex+...
 一个用vue+nodejs开发的完整商城
+![](https://github.com/chenzhilin123/picture/blob/master/index.jpg)
