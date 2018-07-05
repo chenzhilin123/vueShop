@@ -1,14 +1,18 @@
 <template>
-    <div>
-        vip
+    <div class="vip">
+        <Header />
     </div>
 </template>
 <script>
+    import Header from '../components/vipHeader'
     export default {
         data () {
             return {
 
             }
+        },
+        components: {
+            Header
         }
     }
 </script>
