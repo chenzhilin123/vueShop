@@ -1,3 +1,13 @@
 @mixin dpr-img($img){
     background-image: url($img)
 }
+
+@mixin bs ($px) {
+    // border-bottom: $px solid gray;
+    [data-dpr="2"] & {
+        border-bottom: $px solid gray;
+    }
+    [data-dpr="3"] & {
+        border-bottom: $px solid gray;
+    }
+}

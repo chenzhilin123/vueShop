@@ -2,20 +2,9 @@
     <div>
         <SwiperComponent :swiperOption="swiperOption"></SwiperComponent>
         <!-- <Film :el="films.el"></Film> -->
-        <div class="Category_Navigation">
-            <div class="item_list">
-                <div v-for="(item,index) in classE">
-                    <img v-lazy="item.img" alt="">
-                    <p>{{ item.title }}</p>
-                </div>
-            </div>
-            <div class="item_list under">
-                <div v-for="(item,index) in classR">
-                    <img v-lazy="item.img" alt="">
-                    <p>{{ item.title }}</p>
-                </div>
-            </div>
-        </div>
+        <!-- NavList -->
+        <NavList :list="classE"/>
+        <!-- NavList -->
         <!-- 广播 -->
         <Brodcase :message="message"/>
         <!-- 广播 -->
@@ -31,6 +20,7 @@
     import Film from '../components/film.vue'
     import Brodcase from '../components/broadcast.vue'
     import TimeLimit from '../components/timelimit.vue'
+    import NavList from '../components/navList.vue'
     export default {
         data(){
             return{
@@ -44,16 +34,22 @@
                     el: "today"
                 },
                 classE: [
-                    { img: require('../assets/index-img/Special.png'),title:'今日特惠'},
-                    { img: require('../assets/index-img/Global.png'),title:'全球购'},
-                    { img: require('../assets/index-img/Recharge.png'),title:'充值中心'},
-                    { img: require('../assets/index-img/integral.png'),title:'我的积分'}
-                ],
-                classR: [
-                    { img: require('../assets/index-img/Signin.png'),title:'今日签到'},
-                    { img: require('../assets/index-img/coupon.png'),title:'获得优惠'},
-                    { img: require('../assets/index-img/Lightning-purchase.png'),title:'极速购买'},
-                    { img: require('../assets/index-img/Brand-street.png'),title:'大品牌街'}
+                    {
+                        nav: [
+                                { img: require('../assets/index-img/Special.png'),title:'今日特惠',class: 'indexImg'},
+                                { img: require('../assets/index-img/Global.png'),title:'全球购',class: 'indexImg'},
+                                { img: require('../assets/index-img/Recharge.png'),title:'充值中心',class: 'indexImg'},
+                                { img: require('../assets/index-img/integral.png'),title:'我的积分',class: 'indexImg'}
+                            ]
+                    },
+                    {
+                        nav: [
+                                { img: require('../assets/index-img/Signin.png'),title:'今日签到',class: 'indexImg'},
+                                { img: require('../assets/index-img/coupon.png'),title:'获得优惠',class: 'indexImg'},
+                                { img: require('../assets/index-img/Lightning-purchase.png'),title:'极速购买',class: 'indexImg'},
+                                { img: require('../assets/index-img/Brand-street.png'),title:'大品牌街',class: 'indexImg'}
+                            ]
+                    }
                 ],
                 message: '商城开业狂欢，四重好礼等你来抢！',
                 store: [
@@ -72,7 +68,8 @@
             SwiperComponent,
             Film,
             Brodcase,
-            TimeLimit
+            TimeLimit,
+            NavList
         },
         mounted () {
             //获取热门资讯消息

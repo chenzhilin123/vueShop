@@ -5,8 +5,11 @@
                 <!-- 个人中心图片 -->
             </div>
             <div class="text">
-                <div class="names">陈志林</div>
-                <div class="shopStore">sdff</div>
+                <div class="names">{{ this.store.name }}</div>
+                <div class="shopStore">
+                    <div class="collection">收藏商品( {{ this.store.coll }} )</div>
+                    <div class="collection">收藏店铺( {{ this.store.collStore }} )</div>
+                </div>
             </div>
         </div>
     </div>
@@ -16,6 +19,11 @@
         data () {
             return {
 
+            }
+        },
+        props: {
+            store:{
+                type: Object,
             }
         }
     }
@@ -42,7 +50,20 @@
         flex-direction: column;
         justify-content: space-between;
         height: 1rem;
-        margin-left: .5rem;
+        margin-left: .3rem;
+        .names {
+            font-size: .38rem;
+            color: white;
+        }
+        .shopStore {
+            display: flex;
+            flex-direction: row;
+        }
+        .collection {
+            font-size: .33rem;
+            color: white;
+            margin-right: .3rem;
+        }
     }
 }
 </style>
