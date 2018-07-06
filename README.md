@@ -9,3 +9,4 @@ iview,ElementUI
 vue2,vue-router,axios,ES6,webpack
 # 商城部分已完成的效果图
 ![](https://github.com/chenzhilin123/picture/blob/master/index.jpg)
+![](https://github.com/chenzhilin123/picture/blob/master/vip.jpg)
